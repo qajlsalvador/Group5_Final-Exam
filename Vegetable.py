@@ -9,10 +9,10 @@ model = load_model('Vege2.h5')
 
 vegetable_names = {
     0: 'Cabbage', 
-    1: 'Eggplant', 
-    2: 'Lettuce', 
-    3: 'Carrot', 
-    4: 'onion'
+    1: 'Lettuce', 
+    2: 'Carrot', 
+    3: 'Eggplant', 
+    4: 'Onion'
 }
 
 
@@ -36,7 +36,7 @@ if uploaded_image is not None:
 
         image = Image.open(uploaded_image)
         image = image.resize((224, 224))
-        image = np.expand_dims(image, axis=0)
+        image = np.expand_dims(image, axis=1)
         image = np.array(image)
         
 
@@ -46,8 +46,8 @@ if uploaded_image is not None:
 
         if pred_class_index in vegetable_names:
             predicted_vegetable = vegetable_names[pred_class_index]
-            st.write(f"Prediction: {predicted_vegetable}")
+            st.success(f"Prediction: {predicted_vegetable}")
         else:
-            st.write("Unknown Vegetable")
+            st.warning("Unknown Vegetable")
     except Exception as e:
-        st.write("Error processing image. Please upload a valid image.")
+        st.warning("Error processing image. Please upload a valid image.")
