@@ -1,55 +1,35 @@
 import streamlit as st
-import tensorflow as tf
+from PIL import Image
 import numpy as np
 from keras.models import load_model
-from PIL import Image
 
+model = load_model('VStrained_modelA.h5')
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
+classes = {0: 'cabbage', 1: 'carrot', 2: 'eggplant', 
+           3: 'lettuce', 4: 'onion'}
 
-@st.cache(allow_output_mutation=True)
-def load_model():
-	model = tf.keras.models.load_model('./VStrained_modelA.h5')
-	return model
+st.title('Vegetable Identifier')
 
+st.write("This model is created to identify these 5 classes:")
+st.write(classes)
 
-def predict_class(image, model):
+uploaded_image = st.file_uploader("Upload an image", type=["jpg", "jpeg", "png"])
 
-	image = tf.cast(image, tf.float32)
-	image = tf.image.resize(image, [180, 180])
-
-	image = np.expand_dims(image, axis = 0)
-
-	prediction = model.predict(image)
-
-	return prediction
-
-
-model = load_model()
-st.title('Vegetable Classifier')
-
-file = st.file_uploader("Upload an image of a Vegetable", type=["jpg", "png"])
-
-
-if file is None:
-	st.text('Waiting for upload....')
-
-else:
-	slot = st.empty()
-	slot.text('Running inference....')
-
-	test_image = Image.open(file)
-
-	st.image(test_image, caption="Input Image", width = 400)
-
-	pred = predict_class(np.asarray(test_image), model)
-
-	class_names = ['cabbage', 'carrot', 'eggplant', 'lettuce', 'onion']
-
-	result = class_names[np.argmax(pred)]
-
-	output = 'The image is a ' + result
-
-	slot.text('Done')
-
-	st.success(output)
+if uploaded_image is not None:
+    st.image(uploaded_image, caption='Uploaded Image', use_column_width=True)
+    
+    try:
+        image = Image.open(uploaded_image)
+        image = image.resize((30, 30))
+        image = np.expand_dims(image, axis=0)
+        image = np.array(image)
+        pred_probabilities = model.predict(image)
+        pred_class_index = np.argmax(pred_probabilities, axis=1)[0]
+    
+        if pred_class_index in classes:
+            sign = classes[pred_class_index]
+            st.write(f"Predicted Vegetable {sign}")
+        else:
+            st.write("Unknown Vegetable")
+    except Exception as e:
+        st.write("Unknown Vegetable")
