@@ -46,8 +46,8 @@ if uploaded_image is not None:
 
         if pred_class_index in vegetable_names:
             predicted_vegetable = vegetable_names[pred_class_index]
-            st.success(f"Prediction: {predicted_vegetable}")
+            st.write(f"Prediction: {predicted_vegetable}")
         else:
-            st.warning("Unknown Vegetable")
+            st.write("Unknown Vegetable")
     except Exception as e:
-        st.error("Error processing image. Please upload a valid image.")
+        st.write("Error processing image. Please upload a valid image.")
