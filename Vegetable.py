@@ -31,5 +31,5 @@ if uploaded_image is not None:
             st.write(f"Predicted Vegetable {vege}")
         else:
             st.write("Unknown Vegetable")
- except Exception as e:
+    except Exception as e:
         st.write("Unknown Traffic Sign")
