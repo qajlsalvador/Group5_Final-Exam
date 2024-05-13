@@ -5,7 +5,7 @@ from keras.models import load_model
 
 model = load_model('Vege1.h5')
 
-classes = {0: 'cabbage', 1: 'carrot', 2: 'eggplant', 
+classes = {0: 'cabas', 1: 'carrot', 2: 'eggplant', 
            3: 'lettuce', 4: 'onion'}
 
 st.title('Vegetable Identifier')
