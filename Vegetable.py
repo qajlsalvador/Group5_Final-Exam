@@ -31,5 +31,3 @@ if uploaded_image is not None:
             st.write(f"Predicted Vegetable {sign}")
         else:
             st.write("Unknown Vegetable")
-    except Exception as e:
-        st.write("Unknown Vegetable")
