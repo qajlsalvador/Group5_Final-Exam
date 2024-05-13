@@ -16,10 +16,10 @@ vegetable_names = {
 }
 
 
-st.title('Jomel\'s Garden Vegetable Identifier')
+st.title('Garden Vegetable Identifier')
 
 
-st.write("This tool identifies vegetables commonly found in Jomel's Garden.")
+st.write("This tool identifies vegetables commonly found in the Garden.")
 
 
 st.write("The available vegetables are:")
