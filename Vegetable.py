@@ -4,7 +4,7 @@ import numpy as np
 from keras.models import load_model
 
 
-model = load_model('Vege1.h5')
+model = load_model('Vege2.h5')
 
 
 vegetable_names = {
