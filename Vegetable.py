@@ -25,9 +25,9 @@ def predict_class(image, model):
 
 
 model = load_model()
-st.title('Flower Classifier')
+st.title('Vegetable Classifier')
 
-file = st.file_uploader("Upload an image of a flower", type=["jpg", "png"])
+file = st.file_uploader("Upload an image of a Vegetable", type=["jpg", "png"])
 
 
 if file is None:
@@ -43,7 +43,7 @@ else:
 
 	pred = predict_class(np.asarray(test_image), model)
 
-	class_names = ['daisy', 'dandelion', 'rose', 'sunflower', 'tulip']
+	class_names = ['cabbage', 'carrot', 'eggplant', 'lettuce', 'onion']
 
 	result = class_names[np.argmax(pred)]
 
