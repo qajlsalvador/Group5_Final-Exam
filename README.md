@@ -1,4 +1,4 @@
-#Image-classification-Streamlit
+# Image-classification-Streamlit
 A basic web app that identifies certain vegetables inside the Garden.
 
 Available Vegetables in the Garden:
