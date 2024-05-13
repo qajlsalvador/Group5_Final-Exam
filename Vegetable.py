@@ -5,7 +5,7 @@ from keras.models import load_model
 
 model = load_model('Vege1.h5')
 
-classes = {0: 'cabas', 1: 'carrot', 2: 'eggplant', 
+classes = {0: 'cabbage', 1: 'carrot', 2: 'eggplant', 
            3: 'lettuce', 4: 'onion'}
 
 st.title('Vegetable Identifier')
@@ -20,14 +20,16 @@ if uploaded_image is not None:
     
     try:
         image = Image.open(uploaded_image)
-        image = image.resize((30, 30))
+        image = image.resize((224, 224))
         image = np.expand_dims(image, axis=0)
         image = np.array(image)
         pred_probabilities = model.predict(image)
         pred_class_index = np.argmax(pred_probabilities, axis=1)[0]
     
         if pred_class_index in classes:
-            sign = classes[pred_class_index]
-            st.write(f"Predicted Vegetable {sign}")
+            vege = classes[pred_class_index]
+            st.write(f"Predicted Vegetable {vege}")
         else:
             st.write("Unknown Vegetable")
+ except Exception as e:
+        st.write("Unknown Traffic Sign")
