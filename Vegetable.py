@@ -29,7 +29,7 @@ if uploaded_image is not None:
     try:
 
         image = Image.open(uploaded_image)
-        image = image.resize((228, 228))
+        image = image.resize((224, 224))
         image = np.expand_dims(image, axis=0)
         image = np.array(image)
         
