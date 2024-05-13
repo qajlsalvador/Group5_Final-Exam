@@ -8,9 +8,9 @@ model = load_model('Vege2.h5')
 
 
 vegetable_names = {
-    0: 'Eggplant', 
+    0: 'Cabbage', 
     1: 'Carrot', 
-    2: 'Cabbage', 
+    2: 'Eggplant', 
     3: 'Lettuce', 
     4: 'Onion'
 }
