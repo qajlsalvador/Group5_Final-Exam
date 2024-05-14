@@ -18,6 +18,6 @@ Once uploaded, the model will perform inference and the output will be displayed
 
 ## Sample Outputs for the Web app
 
-![Sample Image 1](Sample1.png)
-![Sample Image 2](Sample2.png)
+![Sample Image 1](sample_output1.png)
+![Sample Image 2](sample_output1.png
 
