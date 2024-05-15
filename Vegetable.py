@@ -15,24 +15,27 @@ vegetable_names = {
     4: 'Onion'
 }
 
-# Define background image URL
-bg_image_url = "https://www.w3schools.com/w3images/forestbridge.jpg"  # Example garden image URL
-
-# Title of the app with background image
+# Custom CSS to change the font of the title
 st.markdown(
-    f"""
+    """
     <style>
-    .reportview-container {{
-        background: url("{bg_image_url}");
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+    .title-font {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+        font-size: 3em;
+    }
+    .stApp {
+        background: url('https://www.w3schools.com/w3images/garden.jpg');
         background-size: cover;
-    }}
+    }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Title of the app
-st.title('Garden Vegetable Identifier')
+# Title of the app with custom font
+st.markdown('<h1 class="title-font">Garden Vegetable Identifier</h1>', unsafe_allow_html=True)
 
 # Write descriptions
 st.write("This tool identifies vegetables commonly found in the Garden.")
