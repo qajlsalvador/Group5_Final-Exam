@@ -15,6 +15,22 @@ vegetable_names = {
     4: 'Onion'
 }
 
+# Define background image URL
+bg_image_url = "https://www.w3schools.com/w3images/forestbridge.jpg"  # Example garden image URL
+
+# Title of the app with background image
+st.markdown(
+    f"""
+    <style>
+    .reportview-container {{
+        background: url("{bg_image_url}");
+        background-size: cover;
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Title of the app
 st.title('Garden Vegetable Identifier')
 
@@ -23,22 +39,6 @@ st.write("This tool identifies vegetables commonly found in the Garden.")
 st.write("The available vegetables are:")
 for idx, veg_name in vegetable_names.items():
     st.write(f"- {veg_name}")
-
-# Use an online garden background image
-bg_image_url = "https://www.w3schools.com/w3images/forestbridge.jpg"  # Example garden image URL
-
-# Apply the background image
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background: url({bg_image_url});
-        background-size: cover;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 
 # File uploader
 uploaded_image = st.file_uploader("Upload an image of a vegetable", type=["jpg", "jpeg", "png"])
