@@ -46,22 +46,3 @@ if uploaded_image is not None:
             st.warning("Unknown Vegetable")
     except Exception as e:
         st.warning("Error processing image. Please upload a valid image.")
-
-# Apply background image using HTML
-def set_background_image(image_url):
-    if image_url:
-        st.markdown(
-            f"""
-            <style>
-            .reportview-container {{
-                background: url("{image_url}") no-repeat center center;
-                background-size: cover;
-            }}
-            </style>
-            """,
-            unsafe_allow_html=True
-        )
-
-# Your image from GitHub
-bg_image_url = "background.jpg"
-set_background_image(bg_image_url)
