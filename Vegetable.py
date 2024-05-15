@@ -15,7 +15,7 @@ vegetable_names = {
     4: 'Onion'
 }
 
-# Custom CSS to change the font of the title
+# Custom CSS to change the font of the title and background
 st.markdown(
     """
     <style>
