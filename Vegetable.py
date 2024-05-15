@@ -19,14 +19,13 @@ vegetable_names = {
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
     .title-font {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Arial', sans-serif;
         color: white;
         font-size: 3em;
     }
-    .stApp {
-        background: url('https://www.w3schools.com/w3images/garden.jpg');
+    body {
+        background-image: url('https://www.w3schools.com/w3images/garden.jpg');
         background-size: cover;
     }
     </style>
