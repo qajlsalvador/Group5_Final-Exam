@@ -24,22 +24,6 @@ st.write("The available vegetables are:")
 for idx, veg_name in vegetable_names.items():
     st.write(f"- {veg_name}")
 
-# Use your image from GitHub as the background
-bg_image_url = "https://github.com/qajlsalvador/Group5_Final-Exam/blob/main/background.jpg"
-
-# Apply the background image
-st.markdown(
-    f"""
-    <style>
-    .stApp {{
-        background: url({bg_image_url});
-        background-size: cover;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # File uploader
 uploaded_image = st.file_uploader("Upload an image of a vegetable", type=["jpg", "jpeg", "png"])
 
@@ -62,3 +46,22 @@ if uploaded_image is not None:
             st.warning("Unknown Vegetable")
     except Exception as e:
         st.warning("Error processing image. Please upload a valid image.")
+
+# Apply background image using HTML
+def set_background_image(image_url):
+    if image_url:
+        st.markdown(
+            f"""
+            <style>
+            .reportview-container {{
+                background: url("{image_url}") no-repeat center center;
+                background-size: cover;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+
+# Your image from GitHub
+bg_image_url = "https://github.com/qajlsalvador/Group5_Final-Exam/blob/main/background.jpg"
+set_background_image(bg_image_url)
