@@ -63,5 +63,5 @@ def set_background_image(image_url):
         )
 
 # Your image from GitHub
-bg_image_url = "https://github.com/qajlsalvador/Group5_Final-Exam/blob/main/background.jpg"
+bg_image_url = "https://raw.githubusercontent.com/qajlsalvador/Group5_Final-Exam/main/background.jpg"
 set_background_image(bg_image_url)
