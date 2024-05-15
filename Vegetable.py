@@ -23,7 +23,7 @@ st.markdown(
     """
     <style>
     body {
-        background-image: url("https://raw.github.com/qajlsalvador/Group5_Final-Exam/main/background.jpg");
+        background-image: url("https://raw.github.com/qajlsalvador/Group5_Final-Exam/main/blob/background.jpg");
         background-size: cover;
     }
     </style>
