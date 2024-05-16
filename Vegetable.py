@@ -18,19 +18,6 @@ vegetable_names = {
 # Title of the app
 st.title('Garden Vegetable Identifier')
 
-# CSS for garden background
-st.markdown(
-    """
-    <style>
-    body {
-        background-image: url("https://raw.github.com/qajlsalvador/Group5_Final-Exam/main/blob/background.jpg");
-        background-size: cover;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
 # Write descriptions
 st.write("This tool identifies vegetables commonly found in the Garden.")
 st.write("The available vegetables are:")
