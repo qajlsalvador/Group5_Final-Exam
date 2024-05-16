@@ -24,8 +24,8 @@ st.write("The available vegetables are:")
 for idx, veg_name in vegetable_names.items():
     st.write(f"- {veg_name}")
 
-# Use a serene garden background image
-bg_image_url = "https://images.unsplash.com/photo-1533247653355-e9ffd686c1e1"  # Serene garden image URL
+# Use an online garden background image
+bg_image_url = "https://www.w3schools.com/w3images/forestbridge.jpg"  # Example garden image URL
 
 # Apply the background image
 st.markdown(
